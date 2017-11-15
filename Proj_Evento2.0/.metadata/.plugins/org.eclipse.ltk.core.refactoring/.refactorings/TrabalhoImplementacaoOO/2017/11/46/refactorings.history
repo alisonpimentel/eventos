@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 5 elements to &apos;Eventos/src/pkgEventos&apos;&#x0D;&#x0A;- Original project: &apos;TrabalhoImplementacaoOO&apos;&#x0D;&#x0A;- Destination element: &apos;Eventos/src/pkgEventos&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     Evento.java&#x0D;&#x0A;     Palestra.java&#x0D;&#x0A;     Palestrante.java&#x0D;&#x0A;     Participante.java&#x0D;&#x0A;     Sala.java" description="Copy compilation units" destination="=Eventos/src&lt;pkgEventos" element1="/src&lt;{Evento.java" element2="/src&lt;{Palestra.java" element3="/src&lt;{Palestrante.java" element4="/src&lt;{Participante.java" element5="/src&lt;{Sala.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1510760816766" units="5" version="1.0"/>
+</session>

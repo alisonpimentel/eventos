@@ -37,7 +37,7 @@ public class Listaparticipante {
 public static void imprimeCert(String cert){
 			
 
-			Palestracert[] participantes =new Palestracert[10];
+			Pale stracert[] participantes =new Palestracert[10];
 			Sala[] sala=null;
 			
 			for (int i = 0; i < participantes.length; i++) {

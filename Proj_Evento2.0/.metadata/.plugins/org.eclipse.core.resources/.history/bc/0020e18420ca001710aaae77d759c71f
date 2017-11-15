@@ -1,0 +1,23 @@
+package pkgEventos;
+
+public class criaEvento {
+	Console a = new Console();
+	
+	
+	
+ public static void Evento(){
+		String data;
+		System.out.println("Adicioner a datado evento: ");
+		
+		data = Console.readString();
+		if(data!=null){
+		Evento evento = new Evento(data);
+		}else{
+			System.out.println("Evento com data nula, tente novamente");
+			Evento();
+		}
+	}
+	
+	
+	
+}
