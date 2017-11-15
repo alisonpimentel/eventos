@@ -1,30 +1,26 @@
-import java.io.BufferedReader;
-import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintStream;
-import java.util.Arrays;
+import java.util.Scanner;
 
 public class Listaparticipante {
-	static int size = 0;
-	 static Participantes[] participantes = new Participantes[20];
+	
+	
 	
 	 
-	 public static void importar() {
-		try {
-			BufferedReader leitura = new BufferedReader(new InputStreamReader(new FileInputStream("participantes.csv")));
-	        String linha = null;
-		        
-	      
-	        
-	        while ((linha = leitura.readLine()) != null) {
-		            String[] Dados = linha.split(",");			      
-		             participantes [size] = new Participantes(Dados[0], Dados[1]);
-		            System.out.println(Arrays.toString(Dados));
-		            System.out.println( "Nome: "+ participantes[size].getNome());
-		            System.out.println("Email: "+ participantes[size].getEmail());
-		            System.out.println("--------------------------");
-		            size++;
+	 public static void impParticipante(String dest) {
+		 Palestracert[] participantes = new Palestracert[10];
+		 int size = 0;
+		 try {
+			FileReader Arquivo = new FileReader(dest);
+			String linha = new String();//
+			Scanner leitura = new Scanner(Arquivo);	
+
+			while(leitura.hasNext()){
+				linha = leitura.nextLine();
+				String [] campo = linha.split(","); // separador
+				participantes[size] = new Palestracert(campo[0],campo[1]);
+				size++;
 		           
 		        }
 	       
@@ -38,29 +34,43 @@ public class Listaparticipante {
 
 		}
 
-	public static void incluir() {
-		  
-		try {
-			PrintStream out = new PrintStream("participantes.csv");
+public static void imprimeCert(String cert){
 			
-			for (int k=0 ; k<size; k++) {
-				out.println(participantes[size].getNome()+participantes[size].getEmail());
+
+			Palestracert[] participantes =new Palestracert[10];
+			Sala[] sala=null;
+			
+			for (int i = 0; i < participantes.length; i++) {
 				
+				if(sala[i].getParticipantes().equals( participantes[i].getNome())){
+					
+					try{
+					FileWriter CertificadoNovo = new FileWriter(cert);
+					
+					
+					CertificadoNovo.append("Certificado de Participação");
+					CertificadoNovo.append("/n");
+					CertificadoNovo.append("Participante: " + participantes[i]);
+					CertificadoNovo.append("/n");
+					CertificadoNovo.append("Palestra: "+ sala[i].getPalestra());
+					CertificadoNovo.append("/n");
+					CertificadoNovo.append("Horario: "+sala[i].getHorario());
+					CertificadoNovo.append("/n");
+					CertificadoNovo.flush();
+					CertificadoNovo.close();
+					
+					}catch (Exception e) {
+						// TODO: handle exception
+						e.printStackTrace();
+					}
+					
+				}
 				
 			}
 		
-			
-		} catch (Exception e) {
-			Console.println("deu erro volta e conserta!");
 		}
-	}
 	
 	
-	static void listagem() {
-		
-		for(int k=0 ; k<size ; k++)
-			Console.println(participantes[size].getNome()+" - "+participantes[size].getEmail());
-	}
 	
 }
 	

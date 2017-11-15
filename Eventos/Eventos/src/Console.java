@@ -19,6 +19,10 @@ public class Console {
 	public static void setLer(Scanner ler) {
 		Console.ler = ler;
 	}
+	
+	private static Scanner scan() {
+		return new Scanner(System.in);
+	}
 
-
+	
 }

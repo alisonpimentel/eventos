@@ -1,18 +1,18 @@
 
-public class Participantes {
+public class Palestracert {
 	private String nome;
 	private String email;
 	
 	
 	
 	
-	public Participantes() {
+	public Palestracert() {
 		
 	}
 	
 	
 	
-	public Participantes(String nome, String email) {
+	public Palestracert(String nome, String email) {
 		super();
 		this.nome = nome;
 		this.email = email;
